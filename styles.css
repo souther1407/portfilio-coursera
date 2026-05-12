@@ -1,0 +1,786 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes aparacion {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+body {
+    background-color: #111;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-size: 18px;
+    animation-name: aparacion;
+    animation-duration: 2s;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+img,video {
+    object-fit: cover;
+    width: 100%;
+}
+
+
+p,li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#sobremi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(139, 250, 176, 0.1) 0%, rgba(139, 250, 176, 0.05) 100%);
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 4px solid rgb(139, 250, 176);
+    text-align: center;
+}
+
+#sobremi h1 {
+    color: rgb(139, 250, 176);
+    text-shadow: 0 2px 8px rgba(139, 250, 176, 0.3);
+    margin-bottom: 8px;
+}
+
+#sobremi h2 {
+    color: rgb(139, 250, 176);
+    margin-bottom: 16px;
+}
+
+#sobremi p {
+    max-width: 600px;
+    line-height: 1.6;
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 12px 32px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.nav.hidden {
+    display: none;
+}
+
+.nav-toggle {
+    background-color: rgb(139, 250, 176);
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: transparent;
+    color: rgb(139, 250, 176);
+    border: 2px solid rgb(139, 250, 176);
+    transform: translateY(-2px);
+}
+
+.nav a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+.nav a:hover {
+    color: rgb(139, 250, 176);
+    background-color: rgba(139, 250, 176, 0.1);
+    border-bottom: 2px solid rgb(139, 250, 176);
+    transform: translateY(-2px);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+input {
+    background-color: transparent;
+    border: none;
+}
+
+#mishobbies, #misobjetivos, #misproyectos, #habilidades {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(34, 34, 34, 0.6);
+    padding: 28px;
+    border-radius: 8px;
+    border-left: 4px solid rgb(139, 250, 176);
+}
+
+#mishobbies h3, #misobjetivos h3, #misproyectos h3, #habilidades h3 {
+    color: rgb(139, 250, 176);
+    margin-bottom: 16px;
+    font-size: 2.2rem;
+}
+
+#mishobbies ul, #mishobbies ol, #misobjetivos ul, #misobjetivos ol, #misproyectos ul, #misproyectos ol {
+    gap: 12px;
+}
+
+#mishobbies li, #misobjetivos li, #misproyectos li, #habilidades li {
+    transition: all 0.3s ease;
+    padding-left: 8px;
+}
+
+#mishobbies li:hover, #misobjetivos li:hover, #misproyectos li:hover, #habilidades li:hover {
+    color: rgb(139, 250, 176);
+    transform: translateX(8px);
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.proyecto-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(139, 250, 176, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    border-color: rgb(139, 250, 176);
+}
+
+.proyecto-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.proyecto-content {
+    padding: 18px;
+}
+
+.proyecto-content h4 {
+    margin: 0 0 10px;
+    color: rgb(139, 250, 176);
+    font-size: 1.35rem;
+}
+
+.proyecto-content p {
+    margin: 0;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+#habilidades h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: rgb(139, 250, 176);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(139, 250, 176, 0.3);
+}
+
+.habilidades-container {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.habilidad-categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 250px;
+    background: rgba(139, 250, 176, 0.05);
+    padding: 16px;
+    border-radius: 6px;
+    border-top: 2px solid rgb(139, 250, 176);
+}
+
+ul,ol {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style-position: inside;
+    margin-left: 8px;
+}
+
+ul li, ol li {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#contacto {
+    background: rgba(34, 34, 34, 0.6);
+    padding: 28px;
+    border-radius: 8px;
+    border-left: 4px solid rgb(139, 250, 176);
+}
+
+#contacto h3 {
+    color: rgb(139, 250, 176);
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contacto label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 6px;
+    display: block;
+}
+
+#contacto .input {
+    width: 100%;
+    border: 2px solid rgb(139, 250, 176);
+    border-radius: 6px;
+    color: #eee;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: rgba(139, 250, 176, 0.02);
+    transition: all 0.3s ease;
+}
+
+#contacto .input:focus {
+    outline: none;
+    background-color: rgba(139, 250, 176, 0.08);
+    border-color: rgb(139, 250, 176);
+    box-shadow: 0 0 12px rgba(139, 250, 176, 0.3);
+}
+
+#contacto .input.invalid,
+#contacto .textarea.invalid {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 6px rgba(255, 107, 107, 0.6);
+}
+
+#contacto .input::placeholder {
+    color: rgba(238, 238, 238, 0.5);
+}
+
+#contacto .textarea {
+    width: 100%;
+    background-color: rgba(139, 250, 176, 0.02);
+    border: 2px solid rgb(139, 250, 176);
+    border-radius: 6px;
+    color: #eee;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+    min-height: 140px;
+}
+
+#contacto .textarea:focus {
+    outline: none;
+    background-color: rgba(139, 250, 176, 0.08);
+    border-color: rgb(139, 250, 176);
+    box-shadow: 0 0 12px rgba(139, 250, 176, 0.3);
+}
+
+#contacto .textarea::placeholder {
+    color: rgba(238, 238, 238, 0.5);
+}
+
+#contacto button {
+    width: 100%;
+    background-color: rgb(139, 250, 176);
+    color: #111;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid rgb(139, 250, 176);
+}
+
+#contacto button:hover {
+    background-color: transparent;
+    color: rgb(139, 250, 176);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 250, 176, 0.3);
+}
+
+#contacto button:active {
+    transform: translateY(0);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px;
+    margin-top: 40px;
+    background-color: #222;
+    border-top: 2px solid rgb(139, 250, 176);
+    flex-direction: column;
+    gap: 12px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #aaa;
+    margin: 0;
+    font-weight: 500;
+}
+
+footer p strong {
+    color: rgb(139, 250, 176);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Tablets - 768px y menores */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 24px 24px;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .nav {
+        justify-content: space-around;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .nav a {
+        font-size: 0.95rem;
+        padding: 6px 12px;
+    }
+
+    #sobremi {
+        padding: 30px 20px;
+    }
+
+    #sobremi p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    #mishobbies, #misobjetivos, #misproyectos, #habilidades {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    #mishobbies h3, #misobjetivos h3, #misproyectos h3, #habilidades h3 {
+        font-size: 1.6rem;
+    }
+
+    .habilidades-container {
+        gap: 16px;
+    }
+
+    .habilidad-categoria {
+        min-width: 200px;
+    }
+
+    ul li, ol li {
+        font-size: 1rem;
+    }
+
+    #contacto {
+        padding: 20px;
+    }
+
+    #contacto label {
+        font-size: 1rem;
+    }
+
+    #contacto .input,
+    #contacto .textarea,
+    #contacto button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 24px 16px;
+        margin-top: 30px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets pequeñas y teléfonos grandes - 600px y menores */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    main {
+        padding: 16px 16px;
+        gap: 16px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    #sobremi {
+        padding: 20px 16px;
+        gap: 12px;
+    }
+
+    #sobremi h1 {
+        font-size: 1.8rem;
+    }
+
+    #sobremi h2 {
+        font-size: 1.3rem;
+    }
+
+    #sobremi p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #mishobbies, #misobjetivos, #misproyectos, #habilidades {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    #mishobbies h3, #misobjetivos h3, #misproyectos h3, #habilidades h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    #habilidades h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .habilidades-container {
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .habilidad-categoria {
+        min-width: 100%;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    ul li, ol li {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    #contacto {
+        padding: 16px;
+    }
+
+    #contacto h3 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    #contacto form {
+        gap: 12px;
+    }
+
+    #contacto label {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    #contacto .input,
+    #contacto .textarea,
+    #contacto button {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    #contacto .textarea {
+        min-height: 120px;
+    }
+
+    footer {
+        padding: 16px 12px;
+        margin-top: 20px;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Teléfonos pequeños - 480px y menores */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        gap: 16px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    main {
+        padding: 12px 12px;
+        gap: 12px;
+    }
+
+    .nav {
+        gap: 6px;
+        padding: 10px 12px;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        margin: 2px;
+    }
+
+    #sobremi {
+        padding: 16px 12px;
+        gap: 10px;
+    }
+
+    #sobremi h1 {
+        font-size: 1.4rem;
+    }
+
+    #sobremi h2 {
+        font-size: 1.1rem;
+    }
+
+    #sobremi p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    #mishobbies, #misobjetivos, #misproyectos, #habilidades {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    #mishobbies h3, #misobjetivos h3, #misproyectos h3, #habilidades h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    #habilidades h4 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .habilidades-container {
+        gap: 10px;
+    }
+
+    ul li, ol li {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        padding-left: 4px;
+    }
+
+    #contacto {
+        padding: 12px;
+    }
+
+    #contacto h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    #contacto form {
+        gap: 10px;
+    }
+
+    #contacto label {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    #contacto .input,
+    #contacto .textarea,
+    #contacto button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    #contacto .textarea {
+        min-height: 100px;
+        rows: 4;
+    }
+
+    #contacto button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 12px 10px;
+        margin-top: 16px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Desktop grande - 1400px y mayores */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1400px;
+        padding: 40px 64px;
+    }
+
+    #sobremi {
+        padding: 50px;
+    }
+
+    #mishobbies, #misobjetivos, #misproyectos, #habilidades {
+        padding: 32px;
+    }
+
+    .habilidades-container {
+        gap: 40px;
+    }
+
+    #contacto {
+        padding: 32px;
+    }
+}

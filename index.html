@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Este es un portfolio de mi magia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+        <nav id="main-nav" class="nav">
+            <a href="#sobremi">Sobre mi</a>
+            <a href="#mishobbies">Mis hobbies</a>
+            <a href="#misobjetivos">Mis objetivos</a>
+            <a href="#misproyectos">Proyectos</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <button id="nav-toggle" class="nav-toggle" aria-controls="main-nav" aria-expanded="true">
+            Ocultar menú
+        </button>
+    </header>
+    
+    
+   
+    <main>
+         <section id="sobremi">
+            <h1>Bienvenido a mi pagina web personal</h1>
+            <h2>Sobre mi</h2>
+            <p>Soy un desarrollador full stack con enfoque en .NET, autodidacta y creador del lenguaje de scripting TuHermana
+                trabajo hace mas de 3 años siempre buscando aprender y mejorar como desarrollador
+            </p>
+        </section>
+
+        <section id="mishobbies">
+            <h3 >Mis hobbies</h2>
+            <ul>
+                <li id="amor">Estudiar informática</li>
+                <li>Jugar al DB</li>
+                <li>Boludear :p</li>
+            </ul>
+        </section>
+        <section id="misobjetivos">
+            <h3>Mis objetivos</h2>
+            <ol>
+                <li>Aprender .NET</li>
+                <li>Aplicar a vacantes en full stack .NET</li>
+                <li>Aprender sobre lenguajes</li>
+                <li>Crear un lenguaje de scripting</li>
+            </ol>
+        </section>
+        <section id="misproyectos">
+            <h3>Mis proyectos</h3>
+            <div class="proyectos-grid">
+                <article class="proyecto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffywjyc0W5tejXoaAJ1j5hT4uxlO8W_TEgQ&s" alt="Proyecto TuHermana" />
+                    <div class="proyecto-content">
+                        <h4>TuHermana</h4>
+                        <p>Lenguaje de scripting personalizado enfocado en automatización y pruebas.</p>
+                    </div>
+                </article>
+                <article class="proyecto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffywjyc0W5tejXoaAJ1j5hT4uxlO8W_TEgQ&s" alt="Proyecto Portfolio Web" />
+                    <div class="proyecto-content">
+                        <h4>Portfolio Web</h4>
+                        <p>Sitio personal construido con HTML, CSS y JavaScript para mostrar trabajos y habilidades.</p>
+                    </div>
+                </article>
+                <article class="proyecto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffywjyc0W5tejXoaAJ1j5hT4uxlO8W_TEgQ&s" alt="Proyecto Full Stack .NET" />
+                    <div class="proyecto-content">
+                        <h4>Full Stack .NET</h4>
+                        <p>Aplicación Full Stack en desarrollo con .NET para aprender prácticas modernas y despliegue.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="habilidades">
+            <h3>Habilidades</h3>
+            <div class="habilidades-container">
+                <div class="habilidad-categoria">
+                    <h4>Lenguajes de Programación</h4>
+                    <ul>
+                        <li>C#</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="habilidad-categoria">
+                    <h4>Tecnologías y Frameworks</h4>
+                    <ul>
+                        <li>.NET</li>
+                        <li>Full Stack Development</li>
+                        <li>REST APIs</li>
+                        <li>Diseño web responsivo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="contacto">
+            <h3>Contacto</h3>
+            <form id="contact-form" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input class="input" type="text" id="nombre" name="nombre" required />
+                
+                <label for="email">Correo electrónico:</label>
+                <input class="input" type="email" id="email" name="email" required />
+                
+                <label for="opinion">Tu opinión:</label>
+                <textarea id="opinion" name="opinion" class="textarea" rows="5" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    
+  
+    <footer>
+        <p>@Copyrigth sarasa 2026</p>
+    </footer>
+  
+  <script src="./script.js" />
+   
+  
+    
+</body>
+</html>
